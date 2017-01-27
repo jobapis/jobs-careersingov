@@ -18,28 +18,15 @@ composer require jobapis/jobs-careersingov
 ```
 
 ## Usage
-Create a Query object and add all the parameters you'd like via the constructor.
+Careers in Government provides no search parameters, just a feed of all their latest jobs via RSS.
+
+In order to grab jobs, first create a query object:
  
 ```php
-// Add parameters to the query via the constructor
+// Instantiate the query object
 $query = new JobApis\Jobs\Client\Queries\CareersInGovQuery();
 ```
 
-Or via the "set" method. All of the parameters documented in Indeed's documentation can be added.
-
-```php
-// Add parameters via the set() method
-$query->set('search_string', 'zend');
-```
-
-You can even chain them if you'd like.
-
-```php
-// Add parameters via the set() method
-$query->set('country_code', 'us')
-    ->set('search_string', 'laravel');
-```
- 
 Then inject the query object into the provider.
 
 ```php

@@ -17,6 +17,24 @@ class CareersInGovQuery extends AbstractQuery
         return 'https://www.careersingovernment.com/rss';
     }
 
+
+    /**
+     * Get http method options based on current client. Good for adding POST parameters.
+     *
+     * @return array
+     */
+    public function getHttpMethodOptions()
+    {
+        return [
+            // Custom CURL options to connect to this RSS feed
+            'curl' => [
+                CURLOPT_HTTPHEADER => array(
+                    "cache-control: no-cache",
+                ),
+            ]
+        ];
+    }
+
     /**
      * Get keyword
      *
